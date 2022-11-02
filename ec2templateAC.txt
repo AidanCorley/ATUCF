@@ -1,0 +1,28 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Param demo"
+Parameters:
+ InstanceTypeParameter:
+ Description: >-
+ Enter one of the default sizes: t2.nano or t2.micro. The default is set as
+ t2.micro.
+ Type: String
+ Default: t2.micro
+ AllowedValues:
+ - t2.nano
+ - t2.micro
+ ConstraintDescription: Only t2.nano or t2.micro are allowed. The default is set as t2.micro
+©R.G.Lennon Cloud Formation
+2
+ 
+ AppPort:
+ Description: Port for the application to use 8180-8190
+ Type: Number
+ MinValue: 8180
+ MaxValue: 8190
+Resources:
+ EC2ParamDemo:
+ Type: AWS::EC2::Instance
+ Properties:
+ InstanceType: !Ref InstanceTypeParameter
+ ImageId: ami-09d3b3274b6c5d4aa
