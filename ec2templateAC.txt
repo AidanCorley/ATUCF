@@ -12,9 +12,6 @@ Parameters:
  - t2.nano
  - t2.micro
  ConstraintDescription: Only t2.nano or t2.micro are allowed. The default is set as t2.micro
-©R.G.Lennon Cloud Formation
-2
- 
  AppPort:
  Description: Port for the application to use 8180-8190
  Type: Number
